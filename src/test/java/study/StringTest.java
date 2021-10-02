@@ -14,4 +14,15 @@ public class StringTest {
 
         assertThat(split).containsExactly("1", "2");
     }
+
+    @Test
+    void 문자열_나누기_2() {
+        String text = "1";
+        String[] split = text.split(",");
+
+        assertThat(split).hasSize(1);
+        assertThat(split).containsExactly("1");
+    }
+
+
 }
