@@ -24,5 +24,16 @@ public class StringTest {
         assertThat(split).containsExactly("1");
     }
 
+    @Test
+    void 문자_제거() {
+        String text = "(1,2)";
+        int startIndex = text.indexOf("(")+1;
+        int lastIndex = text.indexOf(")");
+
+        String result = text.substring(startIndex, lastIndex);
+
+        assertThat(result).isEqualTo("1,2");
+    }
+
 
 }
