@@ -38,7 +38,7 @@ public class SetTest {
 
     @ParameterizedTest
     @CsvSource(value = {"0:false","1:true","2:true","3:true","4:false"}, delimiter = ':')
-    void Set_값_확인_2(int inputNumber, boolean isFree) throws Exception {
-        assertThat(numbers.contains(inputNumber)).isEqualTo(isFree);
+    void Set_값_확인_2(int number, boolean isFree) {
+        assertThat(numbers.contains(number)).isEqualTo(isFree);
     }
 }
