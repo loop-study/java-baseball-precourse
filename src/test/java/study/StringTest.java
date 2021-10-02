@@ -1,9 +1,13 @@
 package study;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DisplayName("문자열 테스트")
 public class StringTest {
 
 
@@ -35,5 +39,19 @@ public class StringTest {
         assertThat(result).isEqualTo("1,2");
     }
 
+    @DisplayName("특정 위치 문자 가져오기")
+    @Test
+    void 문자_가져오기() {
+        String text = "abc";
 
+        assertAll(
+                ()-> assertEquals(text.charAt(0), 'a'),
+                ()-> assertEquals(text.charAt(1), 'b'),
+                ()-> assertEquals(text.charAt(2), 'c'),
+                ()-> assertThatThrownBy(() -> {
+                    text.charAt(3);
+                }).isInstanceOf(IndexOutOfBoundsException.class)
+                        .hasMessageContaining("String index out of range: 3")
+        );
+    }
 }
