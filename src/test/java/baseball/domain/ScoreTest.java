@@ -38,6 +38,6 @@ public class ScoreTest {
         Balls inputBalls = Balls.createInputBalls(inputText);
         Score score = Score.of(randomBalls.getBalls(), inputBalls.getBalls());
 
-        assertThat(score.getStrike()).isEqualTo(resultBallCount);
+        assertThat(score.getBall()).isEqualTo(resultBallCount);
     }
 }

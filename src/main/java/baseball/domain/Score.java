@@ -13,6 +13,14 @@ public class Score {
         this.ball = ball;
     }
 
+    public int getStrike() {
+        return strike;
+    }
+
+    public int getBall() {
+        return ball;
+    }
+
     public static Score of(List<Ball> playerBalls, List<Ball> randomBalls) {
         int strikeCount = strikeZone(playerBalls, randomBalls);
 
