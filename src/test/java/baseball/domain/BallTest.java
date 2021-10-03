@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -12,6 +13,13 @@ public class BallTest {
     @ValueSource(ints = {1,2,3,4,5,6,7,8,9})
     void 야구공_생성(int number) {
         Ball ball = new Ball(number);
+
+        assertThat(ball).isNotNull();
+    }
+
+    @Test
+    void 야구공_랜덤생성() {
+        Ball ball = Ball.of();
 
         assertThat(ball).isNotNull();
     }

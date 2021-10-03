@@ -1,6 +1,8 @@
 package baseball.domain;
 
 
+import nextstep.utils.Randoms;
+
 import java.util.Objects;
 
 public class Ball {
@@ -13,6 +15,10 @@ public class Ball {
     public Ball(int number) {
         validationNumberLange(number);
         this.number = number;
+    }
+
+    public static Ball of() {
+        return new Ball(Randoms.pickNumberInRange(MIN_NUMBER, MAX_NUMBER));
     }
 
     private void validationNumberLange(int number) {
