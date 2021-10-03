@@ -40,4 +40,12 @@ public class ScoreTest {
 
         assertThat(score.getBall()).isEqualTo(resultBallCount);
     }
+
+    @Test
+    void 게임종료_확인() {
+        Balls inputBalls = Balls.createInputBalls("123");
+        Score score = Score.of(randomBalls.getBalls(), inputBalls.getBalls());
+
+        assertThat(score.isFinish()).isTrue();
+    }
 }
