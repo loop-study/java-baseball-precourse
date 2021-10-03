@@ -7,8 +7,8 @@ import static org.assertj.core.api.Assertions.*;
 public class BallTest {
 
     @Test
-    void 공_생성() {
-        Ball ball = new Ball();
+    void 야구공_생성() {
+        Ball ball = new Ball(1);
 
         assertThat(ball).isNotNull();
     }
