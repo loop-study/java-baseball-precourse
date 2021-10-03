@@ -13,8 +13,7 @@ public class BallsTest {
 
     @Test
     void 여러공_생성() {
-        int[] numbers = new int[]{1,2,3};
-        Balls balls = new Balls(createBalls(numbers));
+        Balls balls = Balls.of();
 
         assertThat(balls).isNotNull();
     }

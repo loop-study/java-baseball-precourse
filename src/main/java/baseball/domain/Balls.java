@@ -10,7 +10,6 @@ public class Balls {
     private static final String ERROR_OVERLAP_BALL = "중복되는 숫자가 있습니다.";
     private static final String ERROR_BALL_SIZE = "중복되는 숫자가 있습니다.";
 
-
     private final List<Ball> balls;
 
     public Balls(List<Ball> balls) {
@@ -20,11 +19,11 @@ public class Balls {
     }
 
     public static Balls of() {
-        List<Ball> randomBalls = new ArrayList<>();
-        randomBalls.add(Ball.of());
-        randomBalls.add(Ball.of());
-        randomBalls.add(Ball.of());
-        return new Balls(randomBalls);
+        Set<Ball> randomBalls = new HashSet<>();
+        while (randomBalls.size() != BALL_SIZE) {
+            randomBalls.add(Ball.of());
+        }
+        return new Balls(new ArrayList<>(randomBalls));
     }
 
     private void validationBallsSize(List<Ball> balls) {
