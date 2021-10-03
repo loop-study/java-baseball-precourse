@@ -1,9 +1,6 @@
 package baseball.domain;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Balls {
     private static final int BALL_SIZE = 3;
@@ -33,6 +30,10 @@ public class Balls {
             randomBalls.add(Ball.of());
         }
         return new Balls(new ArrayList<>(randomBalls));
+    }
+
+    public List<Ball> getBalls() {
+        return Collections.unmodifiableList(balls);
     }
 
     private void validationBallsSize(List<Ball> balls) {
