@@ -12,8 +12,15 @@ import static org.assertj.core.api.Assertions.*;
 public class BallsTest {
 
     @Test
-    void 여러공_생성() {
+    void 여러공_랜덤생성() {
         Balls balls = Balls.of();
+
+        assertThat(balls).isNotNull();
+    }
+
+    @Test
+    void 입력된_여러공_생성() {
+        Balls balls = Balls.createInputBalls("123");
 
         assertThat(balls).isNotNull();
     }

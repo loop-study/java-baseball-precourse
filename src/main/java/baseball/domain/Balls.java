@@ -18,6 +18,15 @@ public class Balls {
         this.balls = balls;
     }
 
+    public static Balls createInputBalls(String inputNumbers) {
+        Set<Ball> randomBalls = new HashSet<>();
+        for (int i = 0; i < inputNumbers.length(); i++) {
+            int number = Character.getNumericValue(inputNumbers.charAt(i));
+            randomBalls.add(new Ball(number));
+        }
+        return new Balls(new ArrayList<>(randomBalls));
+    }
+
     public static Balls of() {
         Set<Ball> randomBalls = new HashSet<>();
         while (randomBalls.size() != BALL_SIZE) {
