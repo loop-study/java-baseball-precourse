@@ -29,8 +29,16 @@ public class BaseballController {
         resultView.printScore(score);
         if (score.isFinish()) {
             resultView.printFinish();
-            return true;
+            return isRestart();
         }
         return false;
+    }
+
+    private boolean isRestart() {
+        if (inputView.inputRestart()) {
+            randomBalls = Balls.of();
+            return false;
+        }
+        return true;
     }
 }
