@@ -16,12 +16,12 @@ public class Balls {
     }
 
     public static Balls createInputBalls(String inputNumbers) {
-        Set<Ball> randomBalls = new HashSet<>();
+        List<Ball> randomBalls = new ArrayList<>();
         for (int i = 0; i < inputNumbers.length(); i++) {
             int number = Character.getNumericValue(inputNumbers.charAt(i));
             randomBalls.add(new Ball(number));
         }
-        return new Balls(new ArrayList<>(randomBalls));
+        return new Balls(randomBalls);
     }
 
     public static Balls of() {
