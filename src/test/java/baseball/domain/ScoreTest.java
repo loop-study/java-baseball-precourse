@@ -2,6 +2,8 @@ package baseball.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -19,5 +21,14 @@ public class ScoreTest {
         Score score = Score.of(randomBalls.getBalls(), inputBalls.getBalls());
 
         assertThat(score).isNotNull();
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {"123:3", "124:2", "135:1"}, delimiter = ':')
+    void 스트라이크_확인(String inputText, int resultStrikeCount) {
+        Balls inputBalls = Balls.createInputBalls(inputText);
+        Score score = Score.of(randomBalls.getBalls(), inputBalls.getBalls());
+
+        assertThat(score.getStrike()).isEqualTo(resultStrikeCount);
     }
 }
