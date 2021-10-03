@@ -5,6 +5,7 @@ import java.util.List;
 public class Score {
     private static final Integer ONE = 1;
     private static final Integer ZERO = 0;
+    private static final Integer END_STRIKE_CONDITION = 3;
     private int strike;
     private int ball;
 
@@ -57,5 +58,9 @@ public class Score {
             return ONE;
         }
         return ZERO;
+    }
+
+    public boolean isFinish() {
+        return strike == END_STRIKE_CONDITION;
     }
 }

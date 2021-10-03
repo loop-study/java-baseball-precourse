@@ -41,11 +41,12 @@ public class ScoreTest {
         assertThat(score.getBall()).isEqualTo(resultBallCount);
     }
 
-    @Test
-    void 게임종료_확인() {
-        Balls inputBalls = Balls.createInputBalls("123");
+    @ParameterizedTest
+    @CsvSource(value = {"123:true", "124:false", "135:false"}, delimiter = ':')
+    void 게임종료_여부_확인(String inputText, boolean result) {
+        Balls inputBalls = Balls.createInputBalls(inputText);
         Score score = Score.of(randomBalls.getBalls(), inputBalls.getBalls());
 
-        assertThat(score.isFinish()).isTrue();
+        assertThat(score.isFinish()).isEqualTo(result);
     }
 }
