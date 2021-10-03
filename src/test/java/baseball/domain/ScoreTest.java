@@ -49,6 +49,6 @@ public class ScoreTest {
         Balls inputBalls = Balls.createPlayerBalls(inputText);
         Score score = Score.of(randomBalls.getBalls(), inputBalls.getBalls());
 
-        assertThat(score.isFinish()).isEqualTo(result);
+        assertThat(score.isPlayerWin()).isEqualTo(result);
     }
 }

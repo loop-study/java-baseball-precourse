@@ -18,16 +18,17 @@ public class BaseballController {
 
     public void run() {
         boolean finish = false;
+
         while (!finish) {
             Balls playerBalls = Balls.createPlayerBalls(inputView.inputThreeNumber());
             Score score = Score.of(playerBalls.getBalls(), randomBalls.getBalls());
-            finish = endGame(score);
+            finish = isGameFinish(score);
         }
     }
 
-    private boolean endGame(Score score) {
+    private boolean isGameFinish(Score score) {
         resultView.printScore(score);
-        if (score.isFinish()) {
+        if (score.isPlayerWin()) {
             resultView.printFinish();
             return isRestart();
         }
