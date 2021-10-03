@@ -1,5 +1,7 @@
 package baseball.controller;
 
+import baseball.view.InputView;
+
 public class BaseballController {
     private InputView inputView;
 
@@ -8,6 +10,6 @@ public class BaseballController {
     }
 
     public void run() {
-
+        String inputText = inputView.inputThreeNumber();
     }
 }
