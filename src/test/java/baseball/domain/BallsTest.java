@@ -20,7 +20,7 @@ public class BallsTest {
 
     @Test
     void 입력된_여러공_생성() {
-        Balls balls = Balls.createInputBalls("123");
+        Balls balls = Balls.createPlayerBalls("123");
 
         assertThat(balls).isNotNull();
     }

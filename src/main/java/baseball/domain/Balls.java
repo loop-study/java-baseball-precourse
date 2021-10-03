@@ -15,7 +15,7 @@ public class Balls {
         this.balls = balls;
     }
 
-    public static Balls createInputBalls(String inputNumbers) {
+    public static Balls createPlayerBalls(String inputNumbers) {
         List<Ball> randomBalls = new ArrayList<>();
         for (int i = 0; i < inputNumbers.length(); i++) {
             int number = Character.getNumericValue(inputNumbers.charAt(i));
