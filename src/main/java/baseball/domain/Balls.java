@@ -25,7 +25,7 @@ public class Balls {
     }
 
     public static Balls of() {
-        Set<Ball> randomBalls = new HashSet<>();
+        Set<Ball> randomBalls = new LinkedHashSet<>();
         while (randomBalls.size() != BALL_SIZE) {
             randomBalls.add(Ball.of());
         }
