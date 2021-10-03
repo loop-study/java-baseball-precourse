@@ -1,6 +1,8 @@
 package baseball.domain;
 
 
+import java.util.Objects;
+
 public class Ball {
     private static final int MIN_NUMBER = 1;
     private static final int MAX_NUMBER = 9;
@@ -18,5 +20,18 @@ public class Ball {
             || number > MAX_NUMBER) {
             throw new IllegalArgumentException(ERROR_NUMBER_LANGE);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ball ball = (Ball) o;
+        return number == ball.number;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number);
     }
 }
