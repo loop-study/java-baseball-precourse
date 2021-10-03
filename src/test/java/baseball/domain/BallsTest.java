@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class Balls {
+public class BallsTest {
 
     @Test
     void 여러공_생성() {
